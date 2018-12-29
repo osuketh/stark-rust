@@ -1,0 +1,15 @@
+[package]
+name = "libstark_rs"
+version = "0.1.0"
+authors = ["osuke <arget-fee.free.dgm@hotmail.co.jp>"]
+edition = "2018"
+build = "build.rs"
+
+[dependencies]
+failure="0.1"
+structopt="0.2"
+
+[build-dependencies]
+bindgen = "0.42.2"
+cc = "1.0"
+
