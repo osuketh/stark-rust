@@ -1,0 +1,3 @@
+[submodule "libSTARK"]
+	path = libSTARK
+	url = git@github.com:LayerXcom/libSTARK.git
