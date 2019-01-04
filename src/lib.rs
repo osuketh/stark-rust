@@ -4,20 +4,14 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
+
 use failure::Error;
+use ::std::os::raw::c_uint;
 
-// unsafe fn buildBairInstance(a: i32, b: i32) -> Result<root::libstark::BairInstance, Error> {
-    
-// }
 
-// unsafe fn get_constraints_assignment() -> Result<root::libstark::BairInstance_constraintsPtr_t, Error> {
+pub fn execute_fsrs(a: c_uint, b: c_uint, sec_prams: c_uint) {
+    unsafe {
+        root::execute(a, b, sec_prams);
+    }
+}
 
-// }
-
-// unsafe fn get_constraints_permutation() -> Result<root::libstark::BairInstance_constraintsPtr_t, Error> {
-
-// }
-
-// unsafe fn get_boundary() -> Result<root::libstark::BairInstance_boundaryConstraints_t, Error> {
-
-// }
