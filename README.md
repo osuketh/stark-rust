@@ -14,7 +14,7 @@ Before building, you may need to retrieve the source code of the wrapper impleme
 ```
 $ git submodule update --init --recursive
 ```
-Install dependecies for compilation 
+Install dependencies for compilation 
 ```
 $ brew install libomp gcc
 ```
