@@ -3,7 +3,7 @@ zk-STARK for fibonacci sequence in Rust
 
 ## How it works
 This library is based on libSTARK developed by [StarkWare Industries Ltd.](https://www.starkware.co/)
-On top of it, [this c++ wrapper](https://github.com/LayerXcom/libSTARK/tree/libstark-rs/fsrs)
+On top of it, [the c++ wrapper](https://github.com/LayerXcom/libSTARK/tree/libstark-rs/fsrs)
 is implemented for simple FFI with this Rust library.
 These make it possible to call functions of STARK execution from Rust.
 
