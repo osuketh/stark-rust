@@ -10,6 +10,10 @@ These make it possible to call functions of STARK execution from Rust.
 More information about zk-STARK and libSTARK is in [here](https://github.com/elibensasson/libSTARK).
 
 ## Setup on macOS
+Before building, you may need to retrieve the source code of the wrapper implementation.
+```
+$ git submodule update --init --recursive
+```
 Install dependecies for compilation 
 ```
 $ brew install libomp gcc
