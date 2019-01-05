@@ -1,48 +1,18 @@
+#![allow(non_snake_case)]
+
 extern crate glob;
 extern crate cc;
 extern crate bindgen;
-
 
 use glob::glob;
 use std::env;
 use std::path::PathBuf;
 
-
 fn main() {    
-
     let stark = glob("./libSTARK/libstark/src/**/*.cpp").unwrap().map(|e| e.unwrap()).into_iter();
     let algebralib = glob("./libSTARK/algebra/algebralib/**/*.cpp").unwrap().map(|e| e.unwrap()).into_iter();
     let FFT = glob("./libSTARK/algebra/FFT/**/*.cpp").unwrap().map(|e| e.unwrap()).into_iter();    
-    let fsrs = glob("./libSTARK/fsrs/**/*.cpp").unwrap().map(|e| e.unwrap()).into_iter();
-
-    // let libname_vec = vec![stark, algebralib, FFT, fsrs];
-
-    // for libname in libname_vec.into_iter() {
-    //     cc::Build::new()
-    //     .cpp(true)                
-    //     .flag("-xc++")
-    //     .flag("-std=c++11")
-    //     .flag("-O3")
-    //     .flag("-g")
-    //     .flag("-Wall")
-    //     .flag("-fmessage-length=0")
-    //     .flag("-Xpreprocessor")
-    //     .flag("-openmp")
-    //     .flag("-maes")
-    //     .flag("-msse4")
-    //     .flag("-mtune=native")
-    //     .flag("-Isrc")   
-    //     .flag("-pthread")   
-    //     .flag("-lomp")     
-    //     .static_flag(true)
-    //     .warnings(false)
-    //     .extra_warnings(false)
-    //     .files(libname)        
-    //     .include("libSTARK/algebra/algebralib/headers")
-    //     .include("libSTARK/algebra/FFT/src")
-    //     .include("libSTARK/libstark/src")    
-    //     .compile("{}", libname);
-    // }
+    let fsrs = glob("./libSTARK/fsrs/**/*.cpp").unwrap().map(|e| e.unwrap()).into_iter();    
     
     cc::Build::new()
         .cpp(true)                
@@ -68,7 +38,6 @@ fn main() {
         .include("libSTARK/algebra/FFT/src")
         .include("libSTARK/libstark/src")    
         .compile("stark");
-
     
     cc::Build::new()
         .cpp(true)    
@@ -136,8 +105,7 @@ fn main() {
         .flag("-Isrc")   
         .flag("-Xpreprocessor")
         .flag("-pthread")   
-        .flag("-lomp")         
-        //.flag("-mpclmul")         
+        .flag("-lomp")                      
         .static_flag(true)     
         .warnings(false)
         .extra_warnings(false) 

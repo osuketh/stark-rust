@@ -1,4 +1,3 @@
-use failure::Error;
 use structopt::StructOpt;
 use ::std::os::raw::c_uint;
 
@@ -11,13 +10,9 @@ struct Opt {
 }
 
 
-fn main() -> Result<(), Error> {
+fn main() {
     let opt = Opt::from_args();
-    let security_parameter: c_uint = 60;
-    // unsafe { let a = stark_rs::buildBairInstance(opt.input_a, opt.input_b); }
-    // stark_rs::executeProtocol();
-    stark_rs::execute_fsrs(opt.input_a, opt.input_b, security_parameter);
-    // Ok(println!("{}, {}", &opt.input_a, &opt.input_b))
-    Ok(())
+    let security_parameter: c_uint = 60;    
+    stark_rs::execute_fsrs(opt.input_a, opt.input_b, security_parameter);    
 }
 
