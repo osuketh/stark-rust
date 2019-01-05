@@ -11,4 +11,3 @@ pub fn execute_fsrs(a: c_uint, b: c_uint, sec_prams: c_uint) {
         root::execute(a, b, sec_prams);
     }
 }
-
