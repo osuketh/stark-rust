@@ -34,7 +34,7 @@ $ cargo run <A: initial number> <B: initial number>
  ```
  $ cargo run 52 9
  ```
- The above execution results in execution of STARK simulation over the fibonacchi sequence.The statement is "I know secret numbers A, B such that the 5th element of the Fibonacci sequence is 131. They are A=52, B=9"
+ The above execution results in execution of STARK simulation over the fibonacci sequence.The statement is "I know secret numbers A, B such that the 5th element of the Fibonacci sequence is 131. They are A=52, B=9"
 
 ## References
 1. Scalable, transparent, and post-quantum secure computational integrity. <https://eprint.iacr.org/2018/046.pdf>
